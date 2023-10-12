@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>MarkSheet with JS</title>
+        <link rel="stylesheet" href="index.css">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+<body>
+  <form>
+    <!-- Head -->
+    <div id = "top">
+    <p><span style="float: left;"> No.: <span style="color: black;">05-332096</span></span> <span style="float: right;">NEB Registration No.: <span style="color: black;">783272650109</span></span></p>
+    <p><div style="font-size: 16px; text-align: centre;">GOVERNMENT OF NEPAL</div> <div style="font-size: 20px; text-align: centre;">NATIONAL EXAMINATIONS BOARD</div></p>
+    <p><div style="font-size: 20px; font-weight: bold; text-align: centre;">Academic Transcript</div> <div style="font-size: 18px; font-weight: bold; text-align: centre;">School Certification Examination (Grade XII)</div></p>
+    </div>
+    <!-- /Head -->
+
+    <!-- Student INFO -->
+    <div>
+    <div style="float: left; font-weight: bold;">Name of Student: <span style="color: black"><input type="text" id="name" onblur = "myName()" placeholder="Enter Your Name" required></span><span id="nname" style="color:black"></span></div><br><br>
+    <div style="float: left; font-weight: bold;">Date of Birth: <span style="color:black"> <input type="date" id="DOB" onblur = "myDOB()"  required></span><span id="ndob" style="color: black;"> </span></div><br><br>
+    <div style="float: left; font-weight: bold;">School:<span style="color:black"> <input type="text" id="school" maxlength="100", placeholder="School, Location, City" onblur = "mySchool()" required></span><span id="nschool" style="color: black;"></span></div>
+    
+</div> <br><br><br><br><br><br>
+    <!-- /Studednt INFO -->
+
+    <!--Grade -->
+    <div >
+    <table style="text-align: center; margin:auto; ">
+        <tr id="tableHead">
+            <th>Subject<br>Code</th>
+            <th>Subject</th>
+            <th>Cerdit<br>Hour</th>
+            <th>Grade<br>Point</th>
+            <th>Grade</th>
+            <th>Final<br>Grade</th>
+            <th>Remark</th>
+        </tr>
+
+        <!--NEPALI-->
+        <tr>
+            <td class="SC">0021</td>
+            <td class="sub"> COM.NEPALI (TH) </td>
+            <td class="CH" id="nepalithch"> 2.25 </td>
+            <td class="GP" id="nepaligpa" > </td>
+            <td class="G" id="nepaligrade"> <input type="text" required id="nepalivalue" onblur="nepalical()"></td>
+            <td rowspan="2" class="FG" id="nepalifinalgrade">  </td>
+            <td rowspan="2" class="R"> </td>
+        </tr>
+
+        <tr>
+            <td class="SC">0022</td>
+            <td class="sub"> COM.NEPALI (IN) </td>
+            <td class="CH" id="neplaiprach"> 0.75 </td>
+            <td class="GP" id="nepalipragpa"> 4.0 </td>
+            <td class="G"> A+ </td>
+           
+            
+        </tr>
+         <!--/NEPALI-->
+
+        <!--ENGLISH-->
+        <tr>
+            <td class="SC">0041</td>
+            <td class="sub"> COM.ENGLISH (TH) </td>
+            <td class="CH" id="englishthch"> 3.00 </td>
+            <td class="GP" id="englishgpa"> </td>
+            <td class="G" id="englishgrade"> <input type="text" required id="englishvalue" onblur="englishcal()"> </td>
+            <td rowspan="2" class="FG" id="englishfinalgrade">  </td>
+            <td rowspan="2" class="R"> </td>
+        </tr>
+
+        <tr>
+            <td class="SC">0042</td>
+            <td class="sub"> COM.ENGLISH (IN) </td>
+            <td class="CH" id="englishprach"> 1.00 </td>
+            <td class="GP" id="englishpragpa"> 4.0 </td>
+            <td class="G"> A+ </td>
+            
+           
+        </tr>
+        <!-- /ENGLISH -->
+
+        <!-- MATHS -->
+        <tr>
+            <td class="SC">0081</td>
+            <td class="sub"> COM.MATHEMATICS (TH) </td>
+            <td class="CH" id="mathsthch"> 3.75</td>
+            <td class="GP" id="mathgpa"> </td>
+            <td class="G" id="mathgrade"> <input type="text" required id="mathvalue" onblur="mathcal()"></td>
+            <td rowspan="2" class="FG" id="mathfinalgrade">  </td>
+            <td rowspan="2" class="R"> </td>
+
+        </tr>
+
+        <tr>
+            <td class="SC">0082</td>
+            <td class="sub"> COM.MATHEMATICS (IN) </td>
+            <td class="CH" id="mathprach"> 1.25 </td>
+            <td class="GP" id="mathspragpa"> 4.0 </td>
+            <td class="G"> A+ </td>
+         
+          
+        </tr>
+        <!-- /MATHS -->
+
+        <!-- PHYSICS -->
+        <tr>
+            <td class="SC">1021</td>
+            <td class="sub"> PHYSICS (TH) </td>
+            <td class="CH" id="physicsthch"> 3.75 </td>
+            <td class="GP" id="physicsgpa"> </td>
+            <td class="G" id="physicsgrade"> <input type="text" required id="physicsvalue" onblur="physicscal()"></td>
+            <td rowspan="2" class="FG" id="physicsfinalgrade">  </td>
+            <td rowspan="2" class="R"> </td>
+        </tr>
+
+        <tr>
+            <td class="SC">1022</td>
+            <td class="sub"> PHYSICS (PR/IN) </td>
+            <td class="CH" id="physicsprach"> 1.25 </td>
+            <td class="GP" id="physicspragpa"> 3.6 </td>
+            <td class="G"> A </td>
+           
+           
+        </tr>
+        <!-- /PHYSICS -->
+
+        <!-- CHEMISTRY -->
+        <tr>
+            <td class="SC">3021</td>
+            <td class="sub"> CHEMISTRY (TH) </td>
+            <td class="CH" id="chemistrythch"> 3.75 </td>
+            <td class="GP" id="chemistrygpa">  </td>
+            <td class="G" id="chemistrygrade"> <input type="text" required id="chemistryvalue" onblur="chemistrycal()"></td>
+            <td rowspan="2" class="FG" id="chemistryfinalgrade">  </td>
+            <td rowspan="2" class="R"> </td>
+        </tr>
+
+        <tr>
+            <td class="SC">3022</td>
+            <td class="sub"> CHEMISTRY (PR/IN) </td>
+            <td class="CH" id="chemistryprach"> 2.50 </td>
+            <td class="GP" id="chemistrypragpa"> 4.0 </td>
+            <td class="G"> A+ </td>
+         
+          
+        </tr>
+        <!-- /CHEMISTRY -->
+
+        <!-- COMPUTER -->
+        <tr>
+            <td class="SC">4282</td>
+            <td class="sub"> COMPUTER SCIENCE (TH) </td>
+            <td class="CH" id="computerthch"> 3.75</td>
+            <td class="GP" id="computergpa"> </td>
+            <td class="G" id="computergrade"> <input type="text" required id="computervalue" onblur="computercal()"></td>
+            <td rowspan="2" class="FG" id="computerfinalgrade">  </td>
+            <td rowspan="2" class="R"> </td>
+        </tr>
+
+        <tr>
+            <td class="SC">4282</td>
+            <td class="sub"> COMPUTER SCIENCE (PR/IN) </td>
+            <td class="CH" id="computerprach"> 2.50 </td>
+            <td class="GP" id="computerpragpa"> 4.0 </td>
+            <td class="G"> A+ </td>
+           
+            
+        </tr>
+        <!-- /COMPUTER -->
+
+        <!-- TOTAL-->
+        <tr>
+            <td></td>
+            <td class="GC"  style="text-align: right; padding-right: 10px;"> Total </td>
+            <td> 27.00</td>
+            <td colspan="4" class="GC"style="text-align: left; padding-left: 10px;"> Grade Point Avarage(GPA): <button id="calculatetotalgpa">Calculate</button><span id="finalgpa" style="color:black"> </span> </td>
+            
+        </tr>
+        <!-- /TOTAL-->
+
+        <!-- addinfo -->
+        <tr>
+            <td colspan="7" class="GC" style="text-align: left; padding-left: 10px;">Additional Subject (Extra Credit)</td>
+          
+            
+        </tr>
+         <!-- /addinfo -->
+
+        <!-- blank -->
+        <tr>
+            <td> </td>
+            <td> </td>
+            <td>  </td>
+            <td> </td>
+            <td>  </td>
+            <td>  </td>
+            <td> </td>
+        </tr>
+          <!-- /blank -->
+
+        <!-- YS -->
+        <tr>
+            <td colspan="2" class="GC"> Year of Examination </td>
+            <td colspan="2" class="GC">Symbol Number </td>
+            <td colspan="3">  </td>
+        </tr>
+
+        <tr>
+            <td colspan="2" style="text-align: right; padding-right: 10px;"> 2079 </td>
+            <td colspan="2" style="text-align: left; padding: 10px;"> 27706615 </td>
+            <td colspan="3" class="GC"> Note:One Credit Hour Equal 32 Teaching Clock Hours<br><br> TH: Theroy, PR: Practical IN: Internal <br><br>*The Students has completed the subject in more than one attempt. </td>
+        </tr>
+        <!-- /YS -->
+
+    </table>
+    <!-- /GRADE -->
+    </div>
+
+
+
+
+
+    <!-- Last -->
+    <div id="last">
+        <p class="GC" style="text-align: left;"> Year of Completion: <span id="DOI" style="color: black;">2079 (2022)</span></p>
+        <p class="GC" style="text-align: left;">Prepared by:<span id="DOI" style="color: black;"> 05-001</span></p>
+        <p class="GC" style="text-align: left;">Date of Issue: <span id="DOI" style="color: black;">2079/07/27</span>
+            <span id="sign" style="text-align: left;">
+                <span id="CSO" class="GC" style="text-decoration: overline; padding-left: 50px;"> Checked by(Section Officer)</span>
+                <span id="VDC" class="GC" style=" text-decoration: overline; padding-left: 50px;"> Verified by(Deputy Controller)</span>
+                <span id="CE" class="GC" style=" text-decoration: overline; padding-left: 50px;"> Controller of Examinations </span>
+            </span></p>
+    </div>
+    <!-- /Last -->
+  </form>
+
+<script src="index.js"></script>
+</body>
+</html>
